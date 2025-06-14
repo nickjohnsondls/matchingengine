@@ -1,0 +1,49 @@
+cmake_minimum_required(VERSION 3.20)
+project(MicroMatch VERSION 0.1.0 LANGUAGES CXX)
+
+# C++ Standard
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+
+# Build type
+if(NOT CMAKE_BUILD_TYPE)
+    set(CMAKE_BUILD_TYPE Release)
+endif()
+
+# Compiler flags
+set(CMAKE_CXX_FLAGS_DEBUG "-g -O0 -fsanitize=address,undefined")
+set(CMAKE_CXX_FLAGS_RELEASE "-O3 -march=native -mtune=native")
+
+# Output directories
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+
+# Include directories
+include_directories(${CMAKE_SOURCE_DIR}/include)
+
+# Find packages
+find_package(GTest REQUIRED)
+find_package(Threads REQUIRED)
+
+# Enable testing
+enable_testing()
+
+# Test executable
+add_executable(test_order tests/test_order.cpp)
+
+target_link_libraries(test_order
+    GTest::gtest
+    GTest::gtest_main
+    Threads::Threads
+)
+
+# Add test
+add_test(NAME OrderTests COMMAND test_order)
+
+# Print configuration
+message(STATUS "Build type: ${CMAKE_BUILD_TYPE}")
+message(STATUS "C++ Standard: ${CMAKE_CXX_STANDARD}")
+message(STATUS "Compiler flags (Release): ${CMAKE_CXX_FLAGS_RELEASE}")
+message(STATUS "Compiler flags (Debug): ${CMAKE_CXX_FLAGS_DEBUG}")
