@@ -284,7 +284,7 @@ Arbitrage Window: 2,691μs (Feed B now faster!)
 - "We lost $2M in one day from listening to the wrong feed" - Anonymous Trader
 - "Jitter prediction is worth more than raw speed" - HFT Developer
 - "Most firms don't even measure feed arbitrage" - Exchange Engineer
-  
+
 ## 📄 License
 
 MIT License - See LICENSE file for details
