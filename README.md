@@ -271,31 +271,6 @@ Arbitrage Window: 2,691μs (Feed B now faster!)
 - Sudden 1000x jitter increase
 - Packet loss simulation
 
-## 📚 What You'll Learn
-
-1. **Why Sub-Microsecond Matters**
-
-   - How 500μs feed differences lose trades
-   - Why jitter is harder than absolute latency
-   - Real arbitrage opportunity detection
-
-2. **Infrastructure Reality**
-
-   - Exchanges don't guarantee feed synchronization
-   - Network conditions change dramatically
-   - Monitoring is as important as speed
-
-3. **C++ Performance Techniques**
-
-   - Lock-free programming that actually works
-   - Cache-aware data structures
-   - Hardware timestamp usage
-
-4. **Production Patterns**
-   - Adaptive algorithms for changing conditions
-   - Graceful degradation under load
-   - Real-time performance visibility
-
 ## 🎓 Key Insights from Real Trading Systems
 
 ### From the Research
@@ -309,17 +284,7 @@ Arbitrage Window: 2,691μs (Feed B now faster!)
 - "We lost $2M in one day from listening to the wrong feed" - Anonymous Trader
 - "Jitter prediction is worth more than raw speed" - HFT Developer
 - "Most firms don't even measure feed arbitrage" - Exchange Engineer
-
-## 🤝 Contributing
-
-This is an educational project. Contributions that improve performance or
-demonstrate additional concepts are welcome!
-
-1. Fork the repository
-2. Create a feature branch
-3. Add benchmarks for any performance claims
-4. Submit a pull request
-
+  
 ## 📄 License
 
 MIT License - See LICENSE file for details
