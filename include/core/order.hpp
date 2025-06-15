@@ -146,18 +146,39 @@ namespace micromatch::core
     struct alignas(64) Trade
     {
         uint64_t trade_id;
-        uint64_t buy_order_id;
-        uint64_t sell_order_id;
+        uint64_t aggressive_order_id; // Order that initiated the trade
+        uint64_t passive_order_id;    // Order that was already in the book
         uint64_t symbol_id;
         int64_t price;
         uint32_t quantity;
-        uint32_t padding1;
+        Side side;         // Side of the aggressive order
+        bool is_maker_buy; // Whether the passive/maker order was a buy
         uint64_t timestamp_ns;
-        uint64_t padding2;
+        uint8_t padding[7]; // Padding to reach 64 bytes
 
-        Trade(uint64_t id, const Order &buy, const Order &sell,
+        Trade(uint64_t id, const Order &aggressive, const Order &passive,
               int64_t exec_price, uint32_t qty) noexcept
-            : trade_id(id), buy_order_id(buy.order_id), sell_order_id(sell.order_id), symbol_id(buy.symbol_id), price(exec_price), quantity(qty), padding1(0), timestamp_ns(std::chrono::steady_clock::now().time_since_epoch().count()), padding2(0) {}
+            : trade_id(id),
+              aggressive_order_id(aggressive.order_id),
+              passive_order_id(passive.order_id),
+              symbol_id(aggressive.symbol_id),
+              price(exec_price),
+              quantity(qty),
+              side(aggressive.side),
+              is_maker_buy(passive.side == Side::BUY),
+              timestamp_ns(std::chrono::steady_clock::now().time_since_epoch().count()),
+              padding{} {}
+
+        // Convenience getters for buy/sell order IDs
+        uint64_t buy_order_id() const noexcept
+        {
+            return is_maker_buy ? passive_order_id : aggressive_order_id;
+        }
+
+        uint64_t sell_order_id() const noexcept
+        {
+            return is_maker_buy ? aggressive_order_id : passive_order_id;
+        }
     };
 
     // Ensure trade struct is exactly 64 bytes

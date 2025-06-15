@@ -125,14 +125,19 @@ TEST_F(OrderTest, TradeConstruction)
     Order buy(1, 100, 1000000, 100, Side::BUY);
     Order sell(2, 100, 999000, 100, Side::SELL);
 
+    // Buy is aggressive, sell is passive
     Trade trade(12345, buy, sell, 999000, 50);
 
     EXPECT_EQ(trade.trade_id, 12345);
-    EXPECT_EQ(trade.buy_order_id, 1);
-    EXPECT_EQ(trade.sell_order_id, 2);
+    EXPECT_EQ(trade.aggressive_order_id, 1);
+    EXPECT_EQ(trade.passive_order_id, 2);
+    EXPECT_EQ(trade.buy_order_id(), 1);
+    EXPECT_EQ(trade.sell_order_id(), 2);
     EXPECT_EQ(trade.symbol_id, 100);
     EXPECT_EQ(trade.price, 999000);
     EXPECT_EQ(trade.quantity, 50);
+    EXPECT_EQ(trade.side, Side::BUY);
+    EXPECT_FALSE(trade.is_maker_buy); // Maker was sell
     EXPECT_GT(trade.timestamp_ns, 0);
 }
 

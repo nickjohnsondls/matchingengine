@@ -1,0 +1,2 @@
+/usr/bin/ar qc lib/libmicromatch_core.a CMakeFiles/micromatch_core.dir/src/core/orderbook.cpp.o CMakeFiles/micromatch_core.dir/src/core/matching_engine.cpp.o
+/usr/bin/ranlib lib/libmicromatch_core.a

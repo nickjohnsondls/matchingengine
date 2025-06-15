@@ -136,15 +136,17 @@ TEST_F(OrderBookTest, MultipleMatches)
     auto buy_order = create_order(Side::BUY, 101, 30);
     auto trades = book->add_order(buy_order);
 
-    ASSERT_EQ(trades.size(), 2); // Should match both orders at 100
+    ASSERT_EQ(trades.size(), 3); // Should match both orders at 100 and partially at 101
     EXPECT_EQ(trades[0].price, 100);
     EXPECT_EQ(trades[0].quantity, 10);
     EXPECT_EQ(trades[1].price, 100);
     EXPECT_EQ(trades[1].quantity, 15);
+    EXPECT_EQ(trades[2].price, 101);
+    EXPECT_EQ(trades[2].quantity, 5); // 30 - 10 - 15 = 5
 
-    // Remaining 5 shares should be on the book
-    EXPECT_EQ(book->total_orders(), 2); // Buy order + sell at 101
-    EXPECT_EQ(book->volume_at_price(101, Side::BUY), 5);
+    // Sell order at 101 should have remaining quantity
+    EXPECT_EQ(book->total_orders(), 1);                    // Only sell at 101 with 15 remaining
+    EXPECT_EQ(book->volume_at_price(101, Side::SELL), 15); // 20 - 5 = 15
 }
 
 TEST_F(OrderBookTest, PriceTimePriority)

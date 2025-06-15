@@ -1,0 +1,244 @@
+Start testing: Jun 15 14:30 PDT
+----------------------------------------------------------
+1/4 Testing: OrderTests
+1/4 Test: OrderTests
+Command: "/Users/maryjojohnson/Documents/matchingengine/build/bin/test_order"
+Directory: /Users/maryjojohnson/Documents/matchingengine/build
+"OrderTests" start time: Jun 15 14:30 PDT
+Output:
+----------------------------------------------------------
+Running main() from /private/tmp/googletest-20250430-4945-4e8m2m/googletest-1.17.0/googletest/src/gtest_main.cc
+[==========] Running 11 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 11 tests from OrderTest
+[ RUN      ] OrderTest.BasicConstruction
+[       OK ] OrderTest.BasicConstruction (0 ms)
+[ RUN      ] OrderTest.CacheLineSize
+[       OK ] OrderTest.CacheLineSize (0 ms)
+[ RUN      ] OrderTest.RemainingQuantity
+[       OK ] OrderTest.RemainingQuantity (0 ms)
+[ RUN      ] OrderTest.OrderMatching
+[       OK ] OrderTest.OrderMatching (0 ms)
+[ RUN      ] OrderTest.TimestampGeneration
+[       OK ] OrderTest.TimestampGeneration (0 ms)
+[ RUN      ] OrderTest.TradeConstruction
+[       OK ] OrderTest.TradeConstruction (0 ms)
+[ RUN      ] OrderTest.TradeCacheLineSize
+[       OK ] OrderTest.TradeCacheLineSize (0 ms)
+[ RUN      ] OrderTest.FixedPointPrices
+[       OK ] OrderTest.FixedPointPrices (0 ms)
+[ RUN      ] OrderTest.OrderTypes
+[       OK ] OrderTest.OrderTypes (0 ms)
+[ RUN      ] OrderTest.TimeInForce
+[       OK ] OrderTest.TimeInForce (0 ms)
+[ RUN      ] OrderTest.PerformanceOrderCreation
+Order creation time: 20.1638 ns/order
+Orders per second: 4.95938e+07
+[       OK ] OrderTest.PerformanceOrderCreation (20 ms)
+[----------] 11 tests from OrderTest (20 ms total)
+
+[----------] Global test environment tear-down
+[==========] 11 tests from 1 test suite ran. (20 ms total)
+[  PASSED  ] 11 tests.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"OrderTests" end time: Jun 15 14:30 PDT
+"OrderTests" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/4 Testing: QueueTests
+2/4 Test: QueueTests
+Command: "/Users/maryjojohnson/Documents/matchingengine/build/bin/test_queues"
+Directory: /Users/maryjojohnson/Documents/matchingengine/build
+"QueueTests" start time: Jun 15 14:30 PDT
+Output:
+----------------------------------------------------------
+Running main() from /private/tmp/googletest-20250430-4945-4e8m2m/googletest-1.17.0/googletest/src/gtest_main.cc
+[==========] Running 18 tests from 2 test suites.
+[----------] Global test environment set-up.
+[----------] 8 tests from SPSCQueueTest
+[ RUN      ] SPSCQueueTest.BasicEnqueueDequeue
+[       OK ] SPSCQueueTest.BasicEnqueueDequeue (0 ms)
+[ RUN      ] SPSCQueueTest.EmptyQueue
+[       OK ] SPSCQueueTest.EmptyQueue (0 ms)
+[ RUN      ] SPSCQueueTest.MultipleElements
+[       OK ] SPSCQueueTest.MultipleElements (0 ms)
+[ RUN      ] SPSCQueueTest.StringQueue
+[       OK ] SPSCQueueTest.StringQueue (0 ms)
+[ RUN      ] SPSCQueueTest.ComplexType
+[       OK ] SPSCQueueTest.ComplexType (0 ms)
+[ RUN      ] SPSCQueueTest.MoveSemantics
+[       OK ] SPSCQueueTest.MoveSemantics (0 ms)
+[ RUN      ] SPSCQueueTest.ConcurrentProducerConsumer
+[       OK ] SPSCQueueTest.ConcurrentProducerConsumer (15 ms)
+[ RUN      ] SPSCQueueTest.StressTest
+[       OK ] SPSCQueueTest.StressTest (130 ms)
+[----------] 8 tests from SPSCQueueTest (146 ms total)
+
+[----------] 10 tests from MPMCQueueTest
+[ RUN      ] MPMCQueueTest.BasicEnqueueDequeue
+[       OK ] MPMCQueueTest.BasicEnqueueDequeue (0 ms)
+[ RUN      ] MPMCQueueTest.EmptyQueue
+[       OK ] MPMCQueueTest.EmptyQueue (0 ms)
+[ RUN      ] MPMCQueueTest.FullQueue
+[       OK ] MPMCQueueTest.FullQueue (0 ms)
+[ RUN      ] MPMCQueueTest.BlockingOperations
+[       OK ] MPMCQueueTest.BlockingOperations (0 ms)
+[ RUN      ] MPMCQueueTest.MultipleProducers
+[       OK ] MPMCQueueTest.MultipleProducers (0 ms)
+[ RUN      ] MPMCQueueTest.MultipleConsumers
+[       OK ] MPMCQueueTest.MultipleConsumers (3 ms)
+[ RUN      ] MPMCQueueTest.MixedProducersConsumers
+[       OK ] MPMCQueueTest.MixedProducersConsumers (0 ms)
+[ RUN      ] MPMCQueueTest.StressTest
+Total operations: 5372450
+[       OK ] MPMCQueueTest.StressTest (1005 ms)
+[ RUN      ] MPMCQueueTest.SizeApproximation
+[       OK ] MPMCQueueTest.SizeApproximation (0 ms)
+[ RUN      ] MPMCQueueTest.Capacity
+[       OK ] MPMCQueueTest.Capacity (0 ms)
+[----------] 10 tests from MPMCQueueTest (1010 ms total)
+
+[----------] Global test environment tear-down
+[==========] 18 tests from 2 test suites ran. (1156 ms total)
+[  PASSED  ] 18 tests.
+<end of output>
+Test time =   1.18 sec
+----------------------------------------------------------
+Test Passed.
+"QueueTests" end time: Jun 15 14:30 PDT
+"QueueTests" time elapsed: 00:00:01
+----------------------------------------------------------
+
+3/4 Testing: OrderBookTests
+3/4 Test: OrderBookTests
+Command: "/Users/maryjojohnson/Documents/matchingengine/build/bin/test_orderbook"
+Directory: /Users/maryjojohnson/Documents/matchingengine/build
+"OrderBookTests" start time: Jun 15 14:30 PDT
+Output:
+----------------------------------------------------------
+Running main() from /private/tmp/googletest-20250430-4945-4e8m2m/googletest-1.17.0/googletest/src/gtest_main.cc
+[==========] Running 23 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 23 tests from OrderBookTest
+[ RUN      ] OrderBookTest.EmptyBook
+[       OK ] OrderBookTest.EmptyBook (0 ms)
+[ RUN      ] OrderBookTest.AddSingleBuyOrder
+[       OK ] OrderBookTest.AddSingleBuyOrder (0 ms)
+[ RUN      ] OrderBookTest.AddSingleSellOrder
+[       OK ] OrderBookTest.AddSingleSellOrder (0 ms)
+[ RUN      ] OrderBookTest.MultipleBuyOrders
+[       OK ] OrderBookTest.MultipleBuyOrders (0 ms)
+[ RUN      ] OrderBookTest.MultipleSellOrders
+[       OK ] OrderBookTest.MultipleSellOrders (0 ms)
+[ RUN      ] OrderBookTest.SimpleMatch
+[       OK ] OrderBookTest.SimpleMatch (0 ms)
+[ RUN      ] OrderBookTest.PartialMatch
+[       OK ] OrderBookTest.PartialMatch (0 ms)
+[ RUN      ] OrderBookTest.MultipleMatches
+[       OK ] OrderBookTest.MultipleMatches (0 ms)
+[ RUN      ] OrderBookTest.PriceTimePriority
+[       OK ] OrderBookTest.PriceTimePriority (0 ms)
+[ RUN      ] OrderBookTest.AggressivePriceImprovement
+[       OK ] OrderBookTest.AggressivePriceImprovement (0 ms)
+[ RUN      ] OrderBookTest.CancelOrder
+[       OK ] OrderBookTest.CancelOrder (0 ms)
+[ RUN      ] OrderBookTest.CancelNonExistentOrder
+[       OK ] OrderBookTest.CancelNonExistentOrder (0 ms)
+[ RUN      ] OrderBookTest.CancelFromMiddleOfQueue
+[       OK ] OrderBookTest.CancelFromMiddleOfQueue (0 ms)
+[ RUN      ] OrderBookTest.ModifyOrderPrice
+[       OK ] OrderBookTest.ModifyOrderPrice (0 ms)
+[ RUN      ] OrderBookTest.ModifyOrderQuantity
+[       OK ] OrderBookTest.ModifyOrderQuantity (0 ms)
+[ RUN      ] OrderBookTest.ModifyNonExistentOrder
+[       OK ] OrderBookTest.ModifyNonExistentOrder (0 ms)
+[ RUN      ] OrderBookTest.MarketDataSnapshot
+[       OK ] OrderBookTest.MarketDataSnapshot (0 ms)
+[ RUN      ] OrderBookTest.LargeNumberOfOrders
+[       OK ] OrderBookTest.LargeNumberOfOrders (5 ms)
+[ RUN      ] OrderBookTest.MatchingPerformance
+[       OK ] OrderBookTest.MatchingPerformance (1 ms)
+[ RUN      ] OrderBookTest.ZeroQuantityOrder
+[       OK ] OrderBookTest.ZeroQuantityOrder (0 ms)
+[ RUN      ] OrderBookTest.NegativePriceOrder
+[       OK ] OrderBookTest.NegativePriceOrder (0 ms)
+[ RUN      ] OrderBookTest.DuplicateOrderId
+[       OK ] OrderBookTest.DuplicateOrderId (0 ms)
+[ RUN      ] OrderBookTest.ClearBook
+[       OK ] OrderBookTest.ClearBook (0 ms)
+[----------] 23 tests from OrderBookTest (6 ms total)
+
+[----------] Global test environment tear-down
+[==========] 23 tests from 1 test suite ran. (6 ms total)
+[  PASSED  ] 23 tests.
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"OrderBookTests" end time: Jun 15 14:30 PDT
+"OrderBookTests" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/4 Testing: MatchingEngineTests
+4/4 Test: MatchingEngineTests
+Command: "/Users/maryjojohnson/Documents/matchingengine/build/bin/test_matching_engine"
+Directory: /Users/maryjojohnson/Documents/matchingengine/build
+"MatchingEngineTests" start time: Jun 15 14:30 PDT
+Output:
+----------------------------------------------------------
+Running main() from /private/tmp/googletest-20250430-4945-4e8m2m/googletest-1.17.0/googletest/src/gtest_main.cc
+[==========] Running 15 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 15 tests from MatchingEngineTest
+[ RUN      ] MatchingEngineTest.StartStop
+[       OK ] MatchingEngineTest.StartStop (12 ms)
+[ RUN      ] MatchingEngineTest.RegisterSymbol
+[       OK ] MatchingEngineTest.RegisterSymbol (12 ms)
+[ RUN      ] MatchingEngineTest.UnregisterSymbol
+[       OK ] MatchingEngineTest.UnregisterSymbol (10 ms)
+[ RUN      ] MatchingEngineTest.SubmitSingleOrder
+[       OK ] MatchingEngineTest.SubmitSingleOrder (11 ms)
+[ RUN      ] MatchingEngineTest.SubmitToUnregisteredSymbol
+[       OK ] MatchingEngineTest.SubmitToUnregisteredSymbol (11 ms)
+[ RUN      ] MatchingEngineTest.SimpleMatch
+[       OK ] MatchingEngineTest.SimpleMatch (11 ms)
+[ RUN      ] MatchingEngineTest.MultipleMatches
+[       OK ] MatchingEngineTest.MultipleMatches (13 ms)
+[ RUN      ] MatchingEngineTest.CancelOrder
+[       OK ] MatchingEngineTest.CancelOrder (23 ms)
+[ RUN      ] MatchingEngineTest.ModifyOrder
+[       OK ] MatchingEngineTest.ModifyOrder (24 ms)
+[ RUN      ] MatchingEngineTest.MultipleSymbols
+[       OK ] MatchingEngineTest.MultipleSymbols (13 ms)
+[ RUN      ] MatchingEngineTest.ConcurrentOrders
+Timeout waiting for orders. Expected: 400, Got: 390, Submitted: 400, Rejected: 0
+After stop: total_orders=390
+[       OK ] MatchingEngineTest.ConcurrentOrders (5246 ms)
+[ RUN      ] MatchingEngineTest.Throughput
+Submitted 10000 orders in 3ms
+Throughput: 3.33333e+06 orders/sec
+Generated 4500 trades
+[       OK ] MatchingEngineTest.Throughput (216 ms)
+[ RUN      ] MatchingEngineTest.StopWithPendingOrders
+[       OK ] MatchingEngineTest.StopWithPendingOrders (12 ms)
+[ RUN      ] MatchingEngineTest.ClearAllBooks
+[       OK ] MatchingEngineTest.ClearAllBooks (13 ms)
+[ RUN      ] MatchingEngineTest.SubmitAfterStop
+[       OK ] MatchingEngineTest.SubmitAfterStop (13 ms)
+[----------] 15 tests from MatchingEngineTest (5648 ms total)
+
+[----------] Global test environment tear-down
+[==========] 15 tests from 1 test suite ran. (5648 ms total)
+[  PASSED  ] 15 tests.
+<end of output>
+Test time =   5.95 sec
+----------------------------------------------------------
+Test Passed.
+"MatchingEngineTests" end time: Jun 15 14:30 PDT
+"MatchingEngineTests" time elapsed: 00:00:05
+----------------------------------------------------------
+
+End testing: Jun 15 14:30 PDT

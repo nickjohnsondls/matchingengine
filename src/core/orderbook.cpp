@@ -4,6 +4,7 @@
 #include <queue>
 #include <algorithm>
 #include <cassert>
+#include <iostream>
 
 namespace micromatch::core
 {
@@ -40,6 +41,16 @@ namespace micromatch::core
             }
         }
 
+        void remove_front_after_fill(uint32_t filled_quantity)
+        {
+            if (!orders_.empty())
+            {
+                // The order has already been filled, so we subtract the filled quantity
+                total_volume_ -= filled_quantity;
+                orders_.pop();
+            }
+        }
+
         bool remove_order(uint64_t order_id)
         {
             std::queue<std::shared_ptr<Order>> temp_queue;
@@ -70,9 +81,16 @@ namespace micromatch::core
             if (!orders_.empty())
             {
                 auto &front_order = orders_.front();
+                // Update total volume: subtract old quantity, add new quantity
                 total_volume_ = total_volume_ - front_order->quantity + new_quantity;
-                front_order->quantity = new_quantity;
+                // Note: Don't update front_order->quantity here as it's already been updated
             }
+        }
+
+        void update_volume_after_partial_fill(uint32_t filled_quantity)
+        {
+            // Simply subtract the filled quantity from total volume
+            total_volume_ -= filled_quantity;
         }
 
         bool empty() const { return orders_.empty(); }
@@ -103,20 +121,7 @@ namespace micromatch::core
         Trade generate_trade(const Order &aggressive_order, const Order &passive_order,
                              uint32_t quantity, int64_t price)
         {
-            Trade trade;
-            trade.trade_id = next_trade_id_++;
-            trade.symbol_id = symbol_id_;
-            trade.aggressive_order_id = aggressive_order.order_id;
-            trade.passive_order_id = passive_order.order_id;
-            trade.price = price;
-            trade.quantity = quantity;
-            trade.side = aggressive_order.side;
-            trade.timestamp_ns = std::chrono::steady_clock::now().time_since_epoch().count();
-
-            // Set flags
-            trade.is_maker_buy = (passive_order.side == Side::BUY);
-
-            return trade;
+            return Trade(next_trade_id_++, aggressive_order, passive_order, price, quantity);
         }
 
         // Match a buy order against sell orders
@@ -155,7 +160,7 @@ namespace micromatch::core
                 {
                     // Remove fully filled sell order
                     order_map_.erase(sell_order->order_id);
-                    best_ask_level->remove_front();
+                    best_ask_level->remove_front_after_fill(match_quantity);
 
                     if (best_ask_level->empty())
                     {
@@ -165,7 +170,7 @@ namespace micromatch::core
                 else
                 {
                     // Update partially filled sell order
-                    best_ask_level->update_front_quantity(sell_order->quantity);
+                    best_ask_level->update_volume_after_partial_fill(match_quantity);
                 }
             }
 
@@ -208,7 +213,7 @@ namespace micromatch::core
                 {
                     // Remove fully filled buy order
                     order_map_.erase(buy_order->order_id);
-                    best_bid_level->remove_front();
+                    best_bid_level->remove_front_after_fill(match_quantity);
 
                     if (best_bid_level->empty())
                     {
@@ -218,7 +223,7 @@ namespace micromatch::core
                 else
                 {
                     // Update partially filled buy order
-                    best_bid_level->update_front_quantity(buy_order->quantity);
+                    best_bid_level->update_volume_after_partial_fill(match_quantity);
                 }
             }
 

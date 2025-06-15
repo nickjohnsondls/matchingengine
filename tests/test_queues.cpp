@@ -151,7 +151,7 @@ TEST_F(SPSCQueueTest, StressTest)
 
     std::thread consumer([&]()
                          {
-        int sum = 0;
+        long long sum = 0;  // Use long long to avoid overflow
         int count = 0;
         while (count < num_items) {
             auto result = int_queue.dequeue();
