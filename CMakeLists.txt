@@ -23,6 +23,16 @@ set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 # Include directories
 include_directories(${CMAKE_SOURCE_DIR}/include)
 
+# Source files
+set(CORE_SOURCES
+    src/core/orderbook.cpp
+    src/core/matching_engine.cpp
+)
+
+# Create a library for core components
+add_library(micromatch_core STATIC ${CORE_SOURCES})
+target_link_libraries(micromatch_core Threads::Threads)
+
 # Find packages
 find_package(GTest REQUIRED)
 find_package(Threads REQUIRED)
@@ -48,6 +58,26 @@ target_link_libraries(test_queues
     Threads::Threads
 )
 add_test(NAME QueueTests COMMAND test_queues)
+
+# Test executable for orderbook
+add_executable(test_orderbook tests/test_orderbook.cpp)
+target_link_libraries(test_orderbook
+    micromatch_core
+    GTest::gtest
+    GTest::gtest_main
+    Threads::Threads
+)
+add_test(NAME OrderBookTests COMMAND test_orderbook)
+
+# Test executable for matching engine
+add_executable(test_matching_engine tests/test_matching_engine.cpp)
+target_link_libraries(test_matching_engine
+    micromatch_core
+    GTest::gtest
+    GTest::gtest_main
+    Threads::Threads
+)
+add_test(NAME MatchingEngineTests COMMAND test_matching_engine)
 
 # Benchmark executable (if Google Benchmark is found)
 if(benchmark_FOUND)
