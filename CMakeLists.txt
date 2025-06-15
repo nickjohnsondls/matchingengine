@@ -26,21 +26,41 @@ include_directories(${CMAKE_SOURCE_DIR}/include)
 # Find packages
 find_package(GTest REQUIRED)
 find_package(Threads REQUIRED)
+find_package(benchmark QUIET)
 
 # Enable testing
 enable_testing()
 
-# Test executable
+# Test executable for orders
 add_executable(test_order tests/test_order.cpp)
-
 target_link_libraries(test_order
     GTest::gtest
     GTest::gtest_main
     Threads::Threads
 )
-
-# Add test
 add_test(NAME OrderTests COMMAND test_order)
+
+# Test executable for queues
+add_executable(test_queues tests/test_queues.cpp)
+target_link_libraries(test_queues
+    GTest::gtest
+    GTest::gtest_main
+    Threads::Threads
+)
+add_test(NAME QueueTests COMMAND test_queues)
+
+# Benchmark executable (if Google Benchmark is found)
+if(benchmark_FOUND)
+    add_executable(benchmark_queues tests/benchmark_queues.cpp)
+    target_link_libraries(benchmark_queues
+        benchmark::benchmark
+        benchmark::benchmark_main
+        Threads::Threads
+    )
+    message(STATUS "Google Benchmark found - building benchmarks")
+else()
+    message(STATUS "Google Benchmark not found - skipping benchmarks")
+endif()
 
 # Print configuration
 message(STATUS "Build type: ${CMAKE_BUILD_TYPE}")
