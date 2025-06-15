@@ -244,9 +244,16 @@ namespace micromatch::core
             order_callback_ = std::move(callback);
         }
 
-        MatchingEngineStats get_stats() const override
+        MatchingEngineStatsSnapshot get_stats() const override
         {
-            return stats_;
+            MatchingEngineStatsSnapshot snapshot;
+            snapshot.total_orders = stats_.total_orders.load(std::memory_order_relaxed);
+            snapshot.total_trades = stats_.total_trades.load(std::memory_order_relaxed);
+            snapshot.total_volume = stats_.total_volume.load(std::memory_order_relaxed);
+            snapshot.cancelled_orders = stats_.cancelled_orders.load(std::memory_order_relaxed);
+            snapshot.rejected_orders = stats_.rejected_orders.load(std::memory_order_relaxed);
+            snapshot.modified_orders = stats_.modified_orders.load(std::memory_order_relaxed);
+            return snapshot;
         }
 
         void clear_all_books() override

@@ -38,6 +38,17 @@ namespace micromatch::core
         }
     };
 
+    // Simple stats structure for returning values
+    struct MatchingEngineStatsSnapshot
+    {
+        uint64_t total_orders;
+        uint64_t total_trades;
+        uint64_t total_volume;
+        uint64_t rejected_orders;
+        uint64_t cancelled_orders;
+        uint64_t modified_orders;
+    };
+
     // Matching engine interface
     class IMatchingEngine
     {
@@ -68,7 +79,7 @@ namespace micromatch::core
         virtual void set_order_callback(OrderCallback callback) = 0;
 
         // Get statistics
-        virtual MatchingEngineStats get_stats() const = 0;
+        virtual MatchingEngineStatsSnapshot get_stats() const = 0;
 
         // Clear all order books
         virtual void clear_all_books() = 0;

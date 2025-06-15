@@ -1,0 +1,1 @@
+/usr/bin/c++ -O3 -arch x86_64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/test_matching_engine.dir/tests/test_matching_engine.cpp.o -o bin/test_matching_engine  lib/libmicromatch_core.a /usr/local/lib/libgtest.a /usr/local/lib/libgtest_main.a /usr/local/lib/libgtest.a
