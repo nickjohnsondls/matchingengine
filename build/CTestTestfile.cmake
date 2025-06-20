@@ -12,3 +12,5 @@ add_test([=[OrderBookTests]=] "/Users/maryjojohnson/Documents/matchingengine/bui
 set_tests_properties([=[OrderBookTests]=] PROPERTIES  _BACKTRACE_TRIPLES "/Users/maryjojohnson/Documents/matchingengine/CMakeLists.txt;70;add_test;/Users/maryjojohnson/Documents/matchingengine/CMakeLists.txt;0;")
 add_test([=[MatchingEngineTests]=] "/Users/maryjojohnson/Documents/matchingengine/build/bin/test_matching_engine")
 set_tests_properties([=[MatchingEngineTests]=] PROPERTIES  _BACKTRACE_TRIPLES "/Users/maryjojohnson/Documents/matchingengine/CMakeLists.txt;80;add_test;/Users/maryjojohnson/Documents/matchingengine/CMakeLists.txt;0;")
+add_test([=[NetworkTests]=] "/Users/maryjojohnson/Documents/matchingengine/build/bin/test_network")
+set_tests_properties([=[NetworkTests]=] PROPERTIES  _BACKTRACE_TRIPLES "/Users/maryjojohnson/Documents/matchingengine/CMakeLists.txt;90;add_test;/Users/maryjojohnson/Documents/matchingengine/CMakeLists.txt;0;")

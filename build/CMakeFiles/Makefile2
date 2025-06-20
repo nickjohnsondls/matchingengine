@@ -68,6 +68,8 @@ all: CMakeFiles/test_order.dir/all
 all: CMakeFiles/test_queues.dir/all
 all: CMakeFiles/test_orderbook.dir/all
 all: CMakeFiles/test_matching_engine.dir/all
+all: CMakeFiles/test_network.dir/all
+all: CMakeFiles/network_demo.dir/all
 .PHONY : all
 
 # The main recursive "codegen" target.
@@ -76,6 +78,8 @@ codegen: CMakeFiles/test_order.dir/codegen
 codegen: CMakeFiles/test_queues.dir/codegen
 codegen: CMakeFiles/test_orderbook.dir/codegen
 codegen: CMakeFiles/test_matching_engine.dir/codegen
+codegen: CMakeFiles/test_network.dir/codegen
+codegen: CMakeFiles/network_demo.dir/codegen
 .PHONY : codegen
 
 # The main recursive "preinstall" target.
@@ -88,6 +92,8 @@ clean: CMakeFiles/test_order.dir/clean
 clean: CMakeFiles/test_queues.dir/clean
 clean: CMakeFiles/test_orderbook.dir/clean
 clean: CMakeFiles/test_matching_engine.dir/clean
+clean: CMakeFiles/test_network.dir/clean
+clean: CMakeFiles/network_demo.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -129,7 +135,7 @@ CMakeFiles/micromatch_core.dir/clean:
 CMakeFiles/test_order.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_order.dir/build.make CMakeFiles/test_order.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_order.dir/build.make CMakeFiles/test_order.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/maryjojohnson/Documents/matchingengine/build/CMakeFiles --progress-num=6,7 "Built target test_order"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/maryjojohnson/Documents/matchingengine/build/CMakeFiles --progress-num=10,11 "Built target test_order"
 .PHONY : CMakeFiles/test_order.dir/all
 
 # Build rule for subdir invocation for target.
@@ -146,7 +152,7 @@ test_order: CMakeFiles/test_order.dir/rule
 # codegen rule for target.
 CMakeFiles/test_order.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_order.dir/build.make CMakeFiles/test_order.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/maryjojohnson/Documents/matchingengine/build/CMakeFiles --progress-num=6,7 "Finished codegen for target test_order"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/maryjojohnson/Documents/matchingengine/build/CMakeFiles --progress-num=10,11 "Finished codegen for target test_order"
 .PHONY : CMakeFiles/test_order.dir/codegen
 
 # clean rule for target.
@@ -161,7 +167,7 @@ CMakeFiles/test_order.dir/clean:
 CMakeFiles/test_queues.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_queues.dir/build.make CMakeFiles/test_queues.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_queues.dir/build.make CMakeFiles/test_queues.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/maryjojohnson/Documents/matchingengine/build/CMakeFiles --progress-num=10,11 "Built target test_queues"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/maryjojohnson/Documents/matchingengine/build/CMakeFiles --progress-num=14,15 "Built target test_queues"
 .PHONY : CMakeFiles/test_queues.dir/all
 
 # Build rule for subdir invocation for target.
@@ -178,7 +184,7 @@ test_queues: CMakeFiles/test_queues.dir/rule
 # codegen rule for target.
 CMakeFiles/test_queues.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_queues.dir/build.make CMakeFiles/test_queues.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/maryjojohnson/Documents/matchingengine/build/CMakeFiles --progress-num=10,11 "Finished codegen for target test_queues"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/maryjojohnson/Documents/matchingengine/build/CMakeFiles --progress-num=14,15 "Finished codegen for target test_queues"
 .PHONY : CMakeFiles/test_queues.dir/codegen
 
 # clean rule for target.
@@ -193,7 +199,7 @@ CMakeFiles/test_queues.dir/clean:
 CMakeFiles/test_orderbook.dir/all: CMakeFiles/micromatch_core.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_orderbook.dir/build.make CMakeFiles/test_orderbook.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_orderbook.dir/build.make CMakeFiles/test_orderbook.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/maryjojohnson/Documents/matchingengine/build/CMakeFiles --progress-num=8,9 "Built target test_orderbook"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/maryjojohnson/Documents/matchingengine/build/CMakeFiles --progress-num=12,13 "Built target test_orderbook"
 .PHONY : CMakeFiles/test_orderbook.dir/all
 
 # Build rule for subdir invocation for target.
@@ -210,7 +216,7 @@ test_orderbook: CMakeFiles/test_orderbook.dir/rule
 # codegen rule for target.
 CMakeFiles/test_orderbook.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_orderbook.dir/build.make CMakeFiles/test_orderbook.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/maryjojohnson/Documents/matchingengine/build/CMakeFiles --progress-num=8,9 "Finished codegen for target test_orderbook"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/maryjojohnson/Documents/matchingengine/build/CMakeFiles --progress-num=12,13 "Finished codegen for target test_orderbook"
 .PHONY : CMakeFiles/test_orderbook.dir/codegen
 
 # clean rule for target.
@@ -225,7 +231,7 @@ CMakeFiles/test_orderbook.dir/clean:
 CMakeFiles/test_matching_engine.dir/all: CMakeFiles/micromatch_core.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_matching_engine.dir/build.make CMakeFiles/test_matching_engine.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_matching_engine.dir/build.make CMakeFiles/test_matching_engine.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/maryjojohnson/Documents/matchingengine/build/CMakeFiles --progress-num=4,5 "Built target test_matching_engine"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/maryjojohnson/Documents/matchingengine/build/CMakeFiles --progress-num=6,7 "Built target test_matching_engine"
 .PHONY : CMakeFiles/test_matching_engine.dir/all
 
 # Build rule for subdir invocation for target.
@@ -242,13 +248,77 @@ test_matching_engine: CMakeFiles/test_matching_engine.dir/rule
 # codegen rule for target.
 CMakeFiles/test_matching_engine.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_matching_engine.dir/build.make CMakeFiles/test_matching_engine.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/maryjojohnson/Documents/matchingengine/build/CMakeFiles --progress-num=4,5 "Finished codegen for target test_matching_engine"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/maryjojohnson/Documents/matchingengine/build/CMakeFiles --progress-num=6,7 "Finished codegen for target test_matching_engine"
 .PHONY : CMakeFiles/test_matching_engine.dir/codegen
 
 # clean rule for target.
 CMakeFiles/test_matching_engine.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_matching_engine.dir/build.make CMakeFiles/test_matching_engine.dir/clean
 .PHONY : CMakeFiles/test_matching_engine.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/test_network.dir
+
+# All Build rule for target.
+CMakeFiles/test_network.dir/all: CMakeFiles/micromatch_core.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_network.dir/build.make CMakeFiles/test_network.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_network.dir/build.make CMakeFiles/test_network.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/maryjojohnson/Documents/matchingengine/build/CMakeFiles --progress-num=8,9 "Built target test_network"
+.PHONY : CMakeFiles/test_network.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/test_network.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/maryjojohnson/Documents/matchingengine/build/CMakeFiles 5
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/test_network.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/maryjojohnson/Documents/matchingengine/build/CMakeFiles 0
+.PHONY : CMakeFiles/test_network.dir/rule
+
+# Convenience name for target.
+test_network: CMakeFiles/test_network.dir/rule
+.PHONY : test_network
+
+# codegen rule for target.
+CMakeFiles/test_network.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_network.dir/build.make CMakeFiles/test_network.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/maryjojohnson/Documents/matchingengine/build/CMakeFiles --progress-num=8,9 "Finished codegen for target test_network"
+.PHONY : CMakeFiles/test_network.dir/codegen
+
+# clean rule for target.
+CMakeFiles/test_network.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_network.dir/build.make CMakeFiles/test_network.dir/clean
+.PHONY : CMakeFiles/test_network.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/network_demo.dir
+
+# All Build rule for target.
+CMakeFiles/network_demo.dir/all: CMakeFiles/micromatch_core.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/network_demo.dir/build.make CMakeFiles/network_demo.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/network_demo.dir/build.make CMakeFiles/network_demo.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/maryjojohnson/Documents/matchingengine/build/CMakeFiles --progress-num=4,5 "Built target network_demo"
+.PHONY : CMakeFiles/network_demo.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/network_demo.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/maryjojohnson/Documents/matchingengine/build/CMakeFiles 5
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/network_demo.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/maryjojohnson/Documents/matchingengine/build/CMakeFiles 0
+.PHONY : CMakeFiles/network_demo.dir/rule
+
+# Convenience name for target.
+network_demo: CMakeFiles/network_demo.dir/rule
+.PHONY : network_demo
+
+# codegen rule for target.
+CMakeFiles/network_demo.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/network_demo.dir/build.make CMakeFiles/network_demo.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/maryjojohnson/Documents/matchingengine/build/CMakeFiles --progress-num=4,5 "Finished codegen for target network_demo"
+.PHONY : CMakeFiles/network_demo.dir/codegen
+
+# clean rule for target.
+CMakeFiles/network_demo.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/network_demo.dir/build.make CMakeFiles/network_demo.dir/clean
+.PHONY : CMakeFiles/network_demo.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.
