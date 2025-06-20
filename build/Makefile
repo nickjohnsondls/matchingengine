@@ -191,6 +191,56 @@ test_matching_engine/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_matching_engine.dir/build.make CMakeFiles/test_matching_engine.dir/build
 .PHONY : test_matching_engine/fast
 
+#=============================================================================
+# Target rules for targets named test_network
+
+# Build rule for target.
+test_network: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_network
+.PHONY : test_network
+
+# fast build rule for target.
+test_network/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_network.dir/build.make CMakeFiles/test_network.dir/build
+.PHONY : test_network/fast
+
+#=============================================================================
+# Target rules for targets named network_demo
+
+# Build rule for target.
+network_demo: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 network_demo
+.PHONY : network_demo
+
+# fast build rule for target.
+network_demo/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/network_demo.dir/build.make CMakeFiles/network_demo.dir/build
+.PHONY : network_demo/fast
+
+examples/network_demo.o: examples/network_demo.cpp.o
+.PHONY : examples/network_demo.o
+
+# target to build an object file
+examples/network_demo.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/network_demo.dir/build.make CMakeFiles/network_demo.dir/examples/network_demo.cpp.o
+.PHONY : examples/network_demo.cpp.o
+
+examples/network_demo.i: examples/network_demo.cpp.i
+.PHONY : examples/network_demo.i
+
+# target to preprocess a source file
+examples/network_demo.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/network_demo.dir/build.make CMakeFiles/network_demo.dir/examples/network_demo.cpp.i
+.PHONY : examples/network_demo.cpp.i
+
+examples/network_demo.s: examples/network_demo.cpp.s
+.PHONY : examples/network_demo.s
+
+# target to generate assembly for a file
+examples/network_demo.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/network_demo.dir/build.make CMakeFiles/network_demo.dir/examples/network_demo.cpp.s
+.PHONY : examples/network_demo.cpp.s
+
 src/core/matching_engine.o: src/core/matching_engine.cpp.o
 .PHONY : src/core/matching_engine.o
 
@@ -262,6 +312,30 @@ tests/test_matching_engine.s: tests/test_matching_engine.cpp.s
 tests/test_matching_engine.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_matching_engine.dir/build.make CMakeFiles/test_matching_engine.dir/tests/test_matching_engine.cpp.s
 .PHONY : tests/test_matching_engine.cpp.s
+
+tests/test_network.o: tests/test_network.cpp.o
+.PHONY : tests/test_network.o
+
+# target to build an object file
+tests/test_network.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_network.dir/build.make CMakeFiles/test_network.dir/tests/test_network.cpp.o
+.PHONY : tests/test_network.cpp.o
+
+tests/test_network.i: tests/test_network.cpp.i
+.PHONY : tests/test_network.i
+
+# target to preprocess a source file
+tests/test_network.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_network.dir/build.make CMakeFiles/test_network.dir/tests/test_network.cpp.i
+.PHONY : tests/test_network.cpp.i
+
+tests/test_network.s: tests/test_network.cpp.s
+.PHONY : tests/test_network.s
+
+# target to generate assembly for a file
+tests/test_network.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_network.dir/build.make CMakeFiles/test_network.dir/tests/test_network.cpp.s
+.PHONY : tests/test_network.cpp.s
 
 tests/test_order.o: tests/test_order.cpp.o
 .PHONY : tests/test_order.o
@@ -345,10 +419,15 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... test"
 	@echo "... micromatch_core"
+	@echo "... network_demo"
 	@echo "... test_matching_engine"
+	@echo "... test_network"
 	@echo "... test_order"
 	@echo "... test_orderbook"
 	@echo "... test_queues"
+	@echo "... examples/network_demo.o"
+	@echo "... examples/network_demo.i"
+	@echo "... examples/network_demo.s"
 	@echo "... src/core/matching_engine.o"
 	@echo "... src/core/matching_engine.i"
 	@echo "... src/core/matching_engine.s"
@@ -358,6 +437,9 @@ help:
 	@echo "... tests/test_matching_engine.o"
 	@echo "... tests/test_matching_engine.i"
 	@echo "... tests/test_matching_engine.s"
+	@echo "... tests/test_network.o"
+	@echo "... tests/test_network.i"
+	@echo "... tests/test_network.s"
 	@echo "... tests/test_order.o"
 	@echo "... tests/test_order.i"
 	@echo "... tests/test_order.s"

@@ -1,5 +1,7 @@
-OrderTests 4 0.010561
-QueueTests 2 0.589219
-OrderBookTests 2 0.0145844
-MatchingEngineTests 1 5.94713
+OrderTests 5 0.0610832
+QueueTests 3 0.465508
+OrderBookTests 3 0.0893699
+MatchingEngineTests 1 0
+NetworkTests 1 0.733176
 ---
+MatchingEngineTests

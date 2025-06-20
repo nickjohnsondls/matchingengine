@@ -67,4 +67,6 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/test_queues.dir/DependInfo.cmake"
   "CMakeFiles/test_orderbook.dir/DependInfo.cmake"
   "CMakeFiles/test_matching_engine.dir/DependInfo.cmake"
+  "CMakeFiles/test_network.dir/DependInfo.cmake"
+  "CMakeFiles/network_demo.dir/DependInfo.cmake"
   )

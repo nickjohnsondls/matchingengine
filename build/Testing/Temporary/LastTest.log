@@ -1,10 +1,10 @@
-Start testing: Jun 15 14:30 PDT
+Start testing: Jun 19 18:13 PDT
 ----------------------------------------------------------
-1/4 Testing: OrderTests
-1/4 Test: OrderTests
+1/5 Testing: OrderTests
+1/5 Test: OrderTests
 Command: "/Users/maryjojohnson/Documents/matchingengine/build/bin/test_order"
 Directory: /Users/maryjojohnson/Documents/matchingengine/build
-"OrderTests" start time: Jun 15 14:30 PDT
+"OrderTests" start time: Jun 19 18:13 PDT
 Output:
 ----------------------------------------------------------
 Running main() from /private/tmp/googletest-20250430-4945-4e8m2m/googletest-1.17.0/googletest/src/gtest_main.cc
@@ -32,8 +32,8 @@ Running main() from /private/tmp/googletest-20250430-4945-4e8m2m/googletest-1.17
 [ RUN      ] OrderTest.TimeInForce
 [       OK ] OrderTest.TimeInForce (0 ms)
 [ RUN      ] OrderTest.PerformanceOrderCreation
-Order creation time: 20.1638 ns/order
-Orders per second: 4.95938e+07
+Order creation time: 20.055 ns/order
+Orders per second: 4.98628e+07
 [       OK ] OrderTest.PerformanceOrderCreation (20 ms)
 [----------] 11 tests from OrderTest (20 ms total)
 
@@ -41,18 +41,18 @@ Orders per second: 4.95938e+07
 [==========] 11 tests from 1 test suite ran. (20 ms total)
 [  PASSED  ] 11 tests.
 <end of output>
-Test time =   0.04 sec
+Test time =   0.31 sec
 ----------------------------------------------------------
 Test Passed.
-"OrderTests" end time: Jun 15 14:30 PDT
+"OrderTests" end time: Jun 19 18:13 PDT
 "OrderTests" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-2/4 Testing: QueueTests
-2/4 Test: QueueTests
+2/5 Testing: QueueTests
+2/5 Test: QueueTests
 Command: "/Users/maryjojohnson/Documents/matchingengine/build/bin/test_queues"
 Directory: /Users/maryjojohnson/Documents/matchingengine/build
-"QueueTests" start time: Jun 15 14:30 PDT
+"QueueTests" start time: Jun 19 18:13 PDT
 Output:
 ----------------------------------------------------------
 Running main() from /private/tmp/googletest-20250430-4945-4e8m2m/googletest-1.17.0/googletest/src/gtest_main.cc
@@ -72,10 +72,10 @@ Running main() from /private/tmp/googletest-20250430-4945-4e8m2m/googletest-1.17
 [ RUN      ] SPSCQueueTest.MoveSemantics
 [       OK ] SPSCQueueTest.MoveSemantics (0 ms)
 [ RUN      ] SPSCQueueTest.ConcurrentProducerConsumer
-[       OK ] SPSCQueueTest.ConcurrentProducerConsumer (15 ms)
+[       OK ] SPSCQueueTest.ConcurrentProducerConsumer (9 ms)
 [ RUN      ] SPSCQueueTest.StressTest
-[       OK ] SPSCQueueTest.StressTest (130 ms)
-[----------] 8 tests from SPSCQueueTest (146 ms total)
+[       OK ] SPSCQueueTest.StressTest (110 ms)
+[----------] 8 tests from SPSCQueueTest (120 ms total)
 
 [----------] 10 tests from MPMCQueueTest
 [ RUN      ] MPMCQueueTest.BasicEnqueueDequeue
@@ -89,34 +89,34 @@ Running main() from /private/tmp/googletest-20250430-4945-4e8m2m/googletest-1.17
 [ RUN      ] MPMCQueueTest.MultipleProducers
 [       OK ] MPMCQueueTest.MultipleProducers (0 ms)
 [ RUN      ] MPMCQueueTest.MultipleConsumers
-[       OK ] MPMCQueueTest.MultipleConsumers (3 ms)
+[       OK ] MPMCQueueTest.MultipleConsumers (4 ms)
 [ RUN      ] MPMCQueueTest.MixedProducersConsumers
 [       OK ] MPMCQueueTest.MixedProducersConsumers (0 ms)
 [ RUN      ] MPMCQueueTest.StressTest
-Total operations: 5372450
+Total operations: 5592110
 [       OK ] MPMCQueueTest.StressTest (1005 ms)
 [ RUN      ] MPMCQueueTest.SizeApproximation
 [       OK ] MPMCQueueTest.SizeApproximation (0 ms)
 [ RUN      ] MPMCQueueTest.Capacity
 [       OK ] MPMCQueueTest.Capacity (0 ms)
-[----------] 10 tests from MPMCQueueTest (1010 ms total)
+[----------] 10 tests from MPMCQueueTest (1011 ms total)
 
 [----------] Global test environment tear-down
-[==========] 18 tests from 2 test suites ran. (1156 ms total)
+[==========] 18 tests from 2 test suites ran. (1132 ms total)
 [  PASSED  ] 18 tests.
 <end of output>
-Test time =   1.18 sec
+Test time =   1.40 sec
 ----------------------------------------------------------
 Test Passed.
-"QueueTests" end time: Jun 15 14:30 PDT
+"QueueTests" end time: Jun 19 18:13 PDT
 "QueueTests" time elapsed: 00:00:01
 ----------------------------------------------------------
 
-3/4 Testing: OrderBookTests
-3/4 Test: OrderBookTests
+3/5 Testing: OrderBookTests
+3/5 Test: OrderBookTests
 Command: "/Users/maryjojohnson/Documents/matchingengine/build/bin/test_orderbook"
 Directory: /Users/maryjojohnson/Documents/matchingengine/build
-"OrderBookTests" start time: Jun 15 14:30 PDT
+"OrderBookTests" start time: Jun 19 18:13 PDT
 Output:
 ----------------------------------------------------------
 Running main() from /private/tmp/googletest-20250430-4945-4e8m2m/googletest-1.17.0/googletest/src/gtest_main.cc
@@ -158,7 +158,7 @@ Running main() from /private/tmp/googletest-20250430-4945-4e8m2m/googletest-1.17
 [ RUN      ] OrderBookTest.MarketDataSnapshot
 [       OK ] OrderBookTest.MarketDataSnapshot (0 ms)
 [ RUN      ] OrderBookTest.LargeNumberOfOrders
-[       OK ] OrderBookTest.LargeNumberOfOrders (5 ms)
+[       OK ] OrderBookTest.LargeNumberOfOrders (4 ms)
 [ RUN      ] OrderBookTest.MatchingPerformance
 [       OK ] OrderBookTest.MatchingPerformance (1 ms)
 [ RUN      ] OrderBookTest.ZeroQuantityOrder
@@ -169,24 +169,24 @@ Running main() from /private/tmp/googletest-20250430-4945-4e8m2m/googletest-1.17
 [       OK ] OrderBookTest.DuplicateOrderId (0 ms)
 [ RUN      ] OrderBookTest.ClearBook
 [       OK ] OrderBookTest.ClearBook (0 ms)
-[----------] 23 tests from OrderBookTest (6 ms total)
+[----------] 23 tests from OrderBookTest (5 ms total)
 
 [----------] Global test environment tear-down
-[==========] 23 tests from 1 test suite ran. (6 ms total)
+[==========] 23 tests from 1 test suite ran. (5 ms total)
 [  PASSED  ] 23 tests.
 <end of output>
-Test time =   0.03 sec
+Test time =   0.27 sec
 ----------------------------------------------------------
 Test Passed.
-"OrderBookTests" end time: Jun 15 14:30 PDT
+"OrderBookTests" end time: Jun 19 18:13 PDT
 "OrderBookTests" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-4/4 Testing: MatchingEngineTests
-4/4 Test: MatchingEngineTests
+4/5 Testing: MatchingEngineTests
+4/5 Test: MatchingEngineTests
 Command: "/Users/maryjojohnson/Documents/matchingengine/build/bin/test_matching_engine"
 Directory: /Users/maryjojohnson/Documents/matchingengine/build
-"MatchingEngineTests" start time: Jun 15 14:30 PDT
+"MatchingEngineTests" start time: Jun 19 18:13 PDT
 Output:
 ----------------------------------------------------------
 Running main() from /private/tmp/googletest-20250430-4945-4e8m2m/googletest-1.17.0/googletest/src/gtest_main.cc
@@ -200,45 +200,124 @@ Running main() from /private/tmp/googletest-20250430-4945-4e8m2m/googletest-1.17
 [ RUN      ] MatchingEngineTest.UnregisterSymbol
 [       OK ] MatchingEngineTest.UnregisterSymbol (10 ms)
 [ RUN      ] MatchingEngineTest.SubmitSingleOrder
-[       OK ] MatchingEngineTest.SubmitSingleOrder (11 ms)
+[       OK ] MatchingEngineTest.SubmitSingleOrder (12 ms)
 [ RUN      ] MatchingEngineTest.SubmitToUnregisteredSymbol
-[       OK ] MatchingEngineTest.SubmitToUnregisteredSymbol (11 ms)
+[       OK ] MatchingEngineTest.SubmitToUnregisteredSymbol (13 ms)
 [ RUN      ] MatchingEngineTest.SimpleMatch
 [       OK ] MatchingEngineTest.SimpleMatch (11 ms)
 [ RUN      ] MatchingEngineTest.MultipleMatches
-[       OK ] MatchingEngineTest.MultipleMatches (13 ms)
+[       OK ] MatchingEngineTest.MultipleMatches (11 ms)
 [ RUN      ] MatchingEngineTest.CancelOrder
-[       OK ] MatchingEngineTest.CancelOrder (23 ms)
+[       OK ] MatchingEngineTest.CancelOrder (26 ms)
 [ RUN      ] MatchingEngineTest.ModifyOrder
-[       OK ] MatchingEngineTest.ModifyOrder (24 ms)
+[       OK ] MatchingEngineTest.ModifyOrder (26 ms)
 [ RUN      ] MatchingEngineTest.MultipleSymbols
 [       OK ] MatchingEngineTest.MultipleSymbols (13 ms)
 [ RUN      ] MatchingEngineTest.ConcurrentOrders
-Timeout waiting for orders. Expected: 400, Got: 390, Submitted: 400, Rejected: 0
-After stop: total_orders=390
-[       OK ] MatchingEngineTest.ConcurrentOrders (5246 ms)
+Timeout waiting for orders. Expected: 400, Got: 344, Submitted: 400, Rejected: 0
+After stop: total_orders=344
+/Users/maryjojohnson/Documents/matchingengine/tests/test_matching_engine.cpp:309: Failure
+Expected: (stats.total_orders) >= (num_threads * orders_per_thread * 95 / 100), actual: 344 vs 380
+
+[  FAILED  ] MatchingEngineTest.ConcurrentOrders (5228 ms)
 [ RUN      ] MatchingEngineTest.Throughput
-Submitted 10000 orders in 3ms
-Throughput: 3.33333e+06 orders/sec
+Submitted 10000 orders in 2ms
+Throughput: 5e+06 orders/sec
 Generated 4500 trades
-[       OK ] MatchingEngineTest.Throughput (216 ms)
+[       OK ] MatchingEngineTest.Throughput (218 ms)
 [ RUN      ] MatchingEngineTest.StopWithPendingOrders
 [       OK ] MatchingEngineTest.StopWithPendingOrders (12 ms)
 [ RUN      ] MatchingEngineTest.ClearAllBooks
-[       OK ] MatchingEngineTest.ClearAllBooks (13 ms)
+[       OK ] MatchingEngineTest.ClearAllBooks (11 ms)
 [ RUN      ] MatchingEngineTest.SubmitAfterStop
-[       OK ] MatchingEngineTest.SubmitAfterStop (13 ms)
-[----------] 15 tests from MatchingEngineTest (5648 ms total)
+[       OK ] MatchingEngineTest.SubmitAfterStop (15 ms)
+[----------] 15 tests from MatchingEngineTest (5637 ms total)
 
 [----------] Global test environment tear-down
-[==========] 15 tests from 1 test suite ran. (5648 ms total)
-[  PASSED  ] 15 tests.
+[==========] 15 tests from 1 test suite ran. (5637 ms total)
+[  PASSED  ] 14 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] MatchingEngineTest.ConcurrentOrders
+
+ 1 FAILED TEST
 <end of output>
-Test time =   5.95 sec
+Test time =   5.88 sec
 ----------------------------------------------------------
-Test Passed.
-"MatchingEngineTests" end time: Jun 15 14:30 PDT
+Test Failed.
+"MatchingEngineTests" end time: Jun 19 18:13 PDT
 "MatchingEngineTests" time elapsed: 00:00:05
 ----------------------------------------------------------
 
-End testing: Jun 15 14:30 PDT
+5/5 Testing: NetworkTests
+5/5 Test: NetworkTests
+Command: "/Users/maryjojohnson/Documents/matchingengine/build/bin/test_network"
+Directory: /Users/maryjojohnson/Documents/matchingengine/build
+"NetworkTests" start time: Jun 19 18:13 PDT
+Output:
+----------------------------------------------------------
+Running main() from /private/tmp/googletest-20250430-4945-4e8m2m/googletest-1.17.0/googletest/src/gtest_main.cc
+[==========] Running 8 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 8 tests from NetworkTest
+[ RUN      ] NetworkTest.FeedSimulatorBasic
+[       OK ] NetworkTest.FeedSimulatorBasic (101 ms)
+[ RUN      ] NetworkTest.FeedJitterInjection
+[       OK ] NetworkTest.FeedJitterInjection (202 ms)
+[ RUN      ] NetworkTest.ArbitrageDetection
+[       OK ] NetworkTest.ArbitrageDetection (0 ms)
+[ RUN      ] NetworkTest.ArbitrageWithNoOpportunity
+[       OK ] NetworkTest.ArbitrageWithNoOpportunity (0 ms)
+[ RUN      ] NetworkTest.FeedHandlerIntegration
+Feed handler started with A/B feeds
+MARKET VOLATILITY: Jitter increased 100x!
+[ARBITRAGE] Symbol 1: 39.56 bps profit, latency diff: 10011.25 μs, fast feed: B
+[ARBITRAGE] Symbol 1: 39.37 bps profit, latency diff: 10009.08 μs, fast feed: B
+[ARBITRAGE] Symbol 1: 39.18 bps profit, latency diff: 10015.96 μs, fast feed: B
+[ARBITRAGE] Symbol 1: 38.99 bps profit, latency diff: 10018.38 μs, fast feed: B
+[ARBITRAGE] Symbol 1: 38.80 bps profit, latency diff: 10005.79 μs, fast feed: B
+[ARBITRAGE] Symbol 1: 38.61 bps profit, latency diff: 10010.75 μs, fast feed: B
+[ARBITRAGE] Symbol 1: 38.42 bps profit, latency diff: 10008.67 μs, fast feed: B
+[ARBITRAGE] Symbol 1: 38.24 bps profit, latency diff: 10008.58 μs, fast feed: B
+[ARBITRAGE] Symbol 1: 38.06 bps profit, latency diff: 10784.25 μs, fast feed: B
+Market conditions: Normal
+Feed handler stopped
+
+=== Feed Statistics ===
+Feed A:
+  Messages: 19 (dropped: 0)
+  Avg latency: 10061.48 μs
+  Jitter events: 0
+
+Feed B:
+  Messages: 19 (dropped: 0)
+  Avg latency: 10060.02 μs
+  Jitter events: 0
+
+=== Arbitrage Detection ===
+Opportunities detected: 19
+Profitable opportunities: 9
+Missed opportunities: 0
+Average profit: 38.80 bps
+Average latency diff: 10054.74 μs
+Max latency diff: 10784.25 μs
+[       OK ] NetworkTest.FeedHandlerIntegration (301 ms)
+[ RUN      ] NetworkTest.VolatileMarketJitter
+[       OK ] NetworkTest.VolatileMarketJitter (106 ms)
+[ RUN      ] NetworkTest.MultiSymbolArbitrage
+[       OK ] NetworkTest.MultiSymbolArbitrage (0 ms)
+[ RUN      ] NetworkTest.LatencyDifferenceTracking
+[       OK ] NetworkTest.LatencyDifferenceTracking (0 ms)
+[----------] 8 tests from NetworkTest (712 ms total)
+
+[----------] Global test environment tear-down
+[==========] 8 tests from 1 test suite ran. (712 ms total)
+[  PASSED  ] 8 tests.
+<end of output>
+Test time =   0.73 sec
+----------------------------------------------------------
+Test Passed.
+"NetworkTests" end time: Jun 19 18:13 PDT
+"NetworkTests" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Jun 19 18:13 PDT

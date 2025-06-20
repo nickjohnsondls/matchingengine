@@ -79,6 +79,16 @@ target_link_libraries(test_matching_engine
 )
 add_test(NAME MatchingEngineTests COMMAND test_matching_engine)
 
+# Test executable for network layer
+add_executable(test_network tests/test_network.cpp)
+target_link_libraries(test_network
+    micromatch_core
+    GTest::gtest
+    GTest::gtest_main
+    Threads::Threads
+)
+add_test(NAME NetworkTests COMMAND test_network)
+
 # Benchmark executable (if Google Benchmark is found)
 if(benchmark_FOUND)
     add_executable(benchmark_queues tests/benchmark_queues.cpp)
@@ -87,10 +97,27 @@ if(benchmark_FOUND)
         benchmark::benchmark_main
         Threads::Threads
     )
+    
+    # Benchmark for network layer
+    add_executable(bench_network benchmarks/bench_network.cpp)
+    target_link_libraries(bench_network
+        micromatch_core
+        benchmark::benchmark
+        benchmark::benchmark_main
+        Threads::Threads
+    )
+    
     message(STATUS "Google Benchmark found - building benchmarks")
 else()
     message(STATUS "Google Benchmark not found - skipping benchmarks")
 endif()
+
+# Example executables
+add_executable(network_demo examples/network_demo.cpp)
+target_link_libraries(network_demo
+    micromatch_core
+    Threads::Threads
+)
 
 # Print configuration
 message(STATUS "Build type: ${CMAKE_BUILD_TYPE}")
